@@ -123,6 +123,14 @@
 
         document.getElementById("currentDeposit").innerText = totalDeposit;
         document.getElementById("depositAmount").value = "";
+
+        const currentBalance =
+          document.getElementById("currentBalance").innerText;
+        const currentBalanceNum = parseFloat(currentBalance);
+
+        const totalBlance = depositNumber + currentBalanceNum;
+
+        document.getElementById("currentBalance").innerText = totalBlance;
       });
 
       // withdraw button event handler
