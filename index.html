@@ -115,23 +115,30 @@
         const depositAmount = document.getElementById("depositAmount").value;
         const depositNumber = parseFloat(depositAmount);
 
-        const currentDeposit =
-          document.getElementById("currentDeposit").innerText;
-        const currentDepositNum = parseFloat(currentDeposit);
+        // const currentDeposit =
+        //   document.getElementById("currentDeposit").innerText;
+        // const currentDepositNum = parseFloat(currentDeposit);
+        // const totalDeposit = depositNumber + currentDepositNum;
+        // document.getElementById("currentDeposit").innerText = totalDeposit;
 
-        const totalDeposit = depositNumber + currentDepositNum;
+        // const currentBalance =
+        //   document.getElementById("currentBalance").innerText;
+        // const currentBalanceNum = parseFloat(currentBalance);
+        // const totalBlance = depositNumber + currentBalanceNum;
+        // document.getElementById("currentBalance").innerText = totalBlance;
 
-        document.getElementById("currentDeposit").innerText = totalDeposit;
+        updateSpanText("currentDeposit", depositNumber);
+        updateSpanText("currentBalance", depositNumber);
+
         document.getElementById("depositAmount").value = "";
-
-        const currentBalance =
-          document.getElementById("currentBalance").innerText;
-        const currentBalanceNum = parseFloat(currentBalance);
-
-        const totalBlance = depositNumber + currentBalanceNum;
-
-        document.getElementById("currentBalance").innerText = totalBlance;
       });
+
+      function updateSpanText(id, depositNumber) {
+        const currentBalance = document.getElementById(id).innerText;
+        const currentBalanceNum = parseFloat(currentBalance);
+        const totalBlance = depositNumber + currentBalanceNum;
+        document.getElementById(id).innerText = totalBlance;
+      }
 
       // withdraw button event handler
       const withdrawtBtn = document.getElementById("withdrawtBtn");
